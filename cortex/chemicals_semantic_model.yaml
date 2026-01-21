@@ -1,0 +1,541 @@
+# Cortex Analyst Semantic Model - Chemicals Pricing & Supply Chain
+# Matches actual table/view structure in CHEMICALS_DB
+# DRD Reference: Section 4.1 - Cortex Analyst (Structured)
+
+name: chemicals_pricing_model
+description: >
+  Semantic model for Chemicals Integrated Pricing & Supply Chain analytics.
+  Enables natural language queries about margins, pricing, demand, and market trends.
+
+tables:
+  # ==========================================================================
+  # MARGIN_ANALYZER - Pre-computed profitability per transaction
+  # ==========================================================================
+  - name: margin_analyzer
+    description: Pre-computed profitability analysis per sales transaction with full cost breakdown.
+    base_table:
+      database: CHEMICALS_DB
+      schema: CHEMICAL_OPS
+      table: MARGIN_ANALYZER
+    
+    dimensions:
+      - name: order_id
+        expr: ORDER_ID
+        data_type: TEXT
+      - name: product_id
+        expr: PRODUCT_ID
+        data_type: TEXT
+      - name: product_name
+        synonyms: ["product", "chemical"]
+        description: Product name
+        expr: PRODUCT_NAME
+        data_type: TEXT
+      - name: product_family
+        synonyms: ["family", "product type", "chemical family"]
+        description: Product family (Olefins, Polymers, Aromatics, Intermediates)
+        expr: PRODUCT_FAMILY
+        data_type: TEXT
+        sample_values: ["Olefins", "Polymers", "Aromatics", "Intermediates"]
+      - name: product_category
+        synonyms: ["category"]
+        description: Product category
+        expr: PRODUCT_CATEGORY
+        data_type: TEXT
+      - name: customer_id
+        expr: CUSTOMER_ID
+        data_type: TEXT
+      - name: customer_name
+        synonyms: ["customer"]
+        description: Customer name
+        expr: CUSTOMER_NAME
+        data_type: TEXT
+      - name: customer_segment
+        synonyms: ["segment"]
+        description: Customer segment
+        expr: CUSTOMER_SEGMENT
+        data_type: TEXT
+        sample_values: ["Industrial", "Consumer", "Agricultural", "Automotive", "Construction"]
+      - name: customer_tier
+        synonyms: ["tier"]
+        description: Customer tier
+        expr: CUSTOMER_TIER
+        data_type: TEXT
+        sample_values: ["Platinum", "Gold", "Silver", "Standard"]
+      - name: region
+        synonyms: ["sales region", "geography"]
+        description: Sales region
+        expr: REGION
+        data_type: TEXT
+        sample_values: ["North America", "Europe", "Asia Pacific", "Latin America", "Middle East"]
+      - name: sales_channel
+        synonyms: ["channel"]
+        description: Sales channel
+        expr: SALES_CHANNEL
+        data_type: TEXT
+        sample_values: ["Direct", "Distributor", "Spot", "Contract"]
+      - name: margin_status
+        synonyms: ["deal status", "pricing status"]
+        description: Margin classification (LOSS, UNDERPRICED, BELOW_TARGET, ON_TARGET)
+        expr: MARGIN_STATUS
+        data_type: TEXT
+        sample_values: ["LOSS", "UNDERPRICED", "BELOW_TARGET", "ON_TARGET"]
+
+    time_dimensions:
+      - name: order_date
+        synonyms: ["date", "transaction date"]
+        description: Order date
+        expr: ORDER_DATE
+        data_type: DATE
+      - name: order_month
+        description: Order month
+        expr: ORDER_MONTH
+        data_type: DATE
+      - name: order_quarter
+        description: Order quarter
+        expr: ORDER_QUARTER
+        data_type: DATE
+
+    facts:
+      - name: sales_volume_mt
+        synonyms: ["volume", "quantity", "tons"]
+        description: Sales volume in metric tons
+        expr: SALES_VOLUME_MT
+        data_type: NUMBER
+      - name: selling_price_per_mt
+        synonyms: ["price", "ASP", "selling price"]
+        description: Selling price per metric ton
+        expr: SELLING_PRICE_PER_MT
+        data_type: NUMBER
+      - name: gross_revenue
+        synonyms: ["revenue"]
+        description: Gross revenue before discounts
+        expr: GROSS_REVENUE
+        data_type: NUMBER
+      - name: net_revenue
+        description: Net revenue after discounts and rebates
+        expr: NET_REVENUE
+        data_type: NUMBER
+      - name: discount_amount
+        synonyms: ["discounts"]
+        description: Discount amount
+        expr: DISCOUNT_AMOUNT
+        data_type: NUMBER
+      - name: rebate_amount
+        synonyms: ["rebates"]
+        description: Rebate amount
+        expr: REBATE_AMOUNT
+        data_type: NUMBER
+      - name: freight_cost
+        synonyms: ["freight", "logistics cost"]
+        description: Freight cost
+        expr: FREIGHT_COST
+        data_type: NUMBER
+      - name: feedstock_cost_per_mt
+        synonyms: ["feedstock cost", "raw material cost"]
+        description: Feedstock cost per metric ton
+        expr: FEEDSTOCK_COST_PER_MT
+        data_type: NUMBER
+      - name: total_cost
+        description: Total cost
+        expr: TOTAL_COST
+        data_type: NUMBER
+      - name: gross_margin
+        synonyms: ["margin", "profit"]
+        description: Gross margin in dollars
+        expr: GROSS_MARGIN
+        data_type: NUMBER
+      - name: gross_margin_pct
+        synonyms: ["margin percent", "margin %"]
+        description: Gross margin percentage
+        expr: GROSS_MARGIN_PCT
+        data_type: NUMBER
+      - name: margin_variance_to_target
+        synonyms: ["variance"]
+        description: Margin variance to target
+        expr: MARGIN_VARIANCE_TO_TARGET
+        data_type: NUMBER
+
+    metrics:
+      - name: total_revenue
+        description: Total net revenue
+        expr: SUM(margin_analyzer.NET_REVENUE)
+      - name: total_volume
+        description: Total volume in metric tons
+        expr: SUM(margin_analyzer.SALES_VOLUME_MT)
+      - name: total_margin
+        description: Total gross margin
+        expr: SUM(margin_analyzer.GROSS_MARGIN)
+      - name: avg_margin_pct
+        description: Average margin percentage
+        expr: AVG(margin_analyzer.GROSS_MARGIN_PCT)
+      - name: avg_selling_price
+        description: Average selling price per MT
+        expr: AVG(margin_analyzer.SELLING_PRICE_PER_MT)
+      - name: deal_count
+        description: Number of deals
+        expr: COUNT(DISTINCT margin_analyzer.ORDER_ID)
+      - name: underpriced_deals
+        description: Number of underpriced deals
+        expr: SUM(CASE WHEN margin_analyzer.MARGIN_STATUS IN ('LOSS', 'UNDERPRICED') THEN 1 ELSE 0 END)
+
+  # ==========================================================================
+  # MARKET_TRENDS - Market index trends
+  # ==========================================================================
+  - name: market_trends
+    description: Market index price trends and volatility analysis.
+    base_table:
+      database: CHEMICALS_DB
+      schema: CHEMICAL_OPS
+      table: MARKET_TRENDS
+    
+    dimensions:
+      - name: index_name
+        synonyms: ["index", "feedstock"]
+        description: Market index name
+        expr: INDEX_NAME
+        data_type: TEXT
+      - name: index_code
+        description: Index code
+        expr: INDEX_CODE
+        data_type: TEXT
+      - name: region
+        description: Index region
+        expr: REGION
+        data_type: TEXT
+      - name: price_trend
+        synonyms: ["trend"]
+        description: Price trend classification
+        expr: PRICE_TREND
+        data_type: TEXT
+        sample_values: ["SPIKE", "RISING", "STABLE", "FALLING", "CRASH"]
+      - name: volatility_level
+        description: Volatility classification
+        expr: VOLATILITY_LEVEL
+        data_type: TEXT
+        sample_values: ["HIGH", "MODERATE", "LOW"]
+
+    time_dimensions:
+      - name: index_date
+        synonyms: ["date"]
+        description: Price date
+        expr: INDEX_DATE
+        data_type: DATE
+
+    facts:
+      - name: current_price
+        synonyms: ["price"]
+        description: Current price
+        expr: CURRENT_PRICE
+        data_type: NUMBER
+      - name: price_change_7d
+        synonyms: ["weekly change"]
+        description: 7-day price change
+        expr: PRICE_CHANGE_7D
+        data_type: NUMBER
+      - name: price_change_pct_7d
+        synonyms: ["weekly change %"]
+        description: 7-day price change percentage
+        expr: PRICE_CHANGE_PCT_7D
+        data_type: NUMBER
+      - name: price_change_30d
+        synonyms: ["monthly change"]
+        description: 30-day price change
+        expr: PRICE_CHANGE_30D
+        data_type: NUMBER
+      - name: price_volatility_30d
+        synonyms: ["volatility"]
+        description: 30-day price volatility
+        expr: PRICE_VOLATILITY_30D
+        data_type: NUMBER
+
+  # ==========================================================================
+  # INVENTORY_HEALTH - Inventory analysis
+  # ==========================================================================
+  - name: inventory_health
+    description: Inventory health status with days of supply analysis.
+    base_table:
+      database: CHEMICALS_DB
+      schema: CHEMICAL_OPS
+      table: INVENTORY_HEALTH
+    
+    dimensions:
+      - name: product_id
+        expr: PRODUCT_ID
+        data_type: TEXT
+      - name: product_name
+        synonyms: ["product"]
+        description: Product name
+        expr: PRODUCT_NAME
+        data_type: TEXT
+      - name: product_family
+        description: Product family
+        expr: PRODUCT_FAMILY
+        data_type: TEXT
+      - name: site_id
+        expr: SITE_ID
+        data_type: TEXT
+      - name: site_name
+        synonyms: ["site", "location"]
+        description: Site name
+        expr: SITE_NAME
+        data_type: TEXT
+      - name: region
+        description: Region
+        expr: REGION
+        data_type: TEXT
+      - name: inventory_status
+        synonyms: ["status"]
+        description: Inventory status
+        expr: INVENTORY_STATUS
+        data_type: TEXT
+        sample_values: ["CRITICAL", "LOW", "HEALTHY", "EXCESS"]
+      - name: age_status
+        description: Inventory age status
+        expr: AGE_STATUS
+        data_type: TEXT
+        sample_values: ["FRESH", "MATURING", "AGED"]
+
+    facts:
+      - name: total_inventory_mt
+        synonyms: ["inventory", "stock"]
+        description: Total inventory in metric tons
+        expr: TOTAL_INVENTORY_MT
+        data_type: NUMBER
+      - name: quantity_available_mt
+        synonyms: ["available"]
+        description: Available quantity
+        expr: QUANTITY_AVAILABLE_MT
+        data_type: NUMBER
+      - name: days_of_supply
+        synonyms: ["DOS", "days supply"]
+        description: Days of supply
+        expr: DAYS_OF_SUPPLY
+        data_type: NUMBER
+      - name: inventory_value
+        synonyms: ["value"]
+        description: Inventory value
+        expr: INVENTORY_VALUE
+        data_type: NUMBER
+      - name: working_capital_tied
+        synonyms: ["working capital"]
+        description: Working capital tied up
+        expr: WORKING_CAPITAL_TIED
+        data_type: NUMBER
+
+    metrics:
+      - name: total_inventory_value
+        description: Total inventory value
+        expr: SUM(inventory_health.INVENTORY_VALUE)
+      - name: avg_days_of_supply
+        description: Average days of supply
+        expr: AVG(inventory_health.DAYS_OF_SUPPLY)
+      - name: critical_inventory_count
+        description: Count of products with critical inventory
+        expr: SUM(CASE WHEN inventory_health.INVENTORY_STATUS = 'CRITICAL' THEN 1 ELSE 0 END)
+
+  # ==========================================================================
+  # DEMAND_FORECAST - ML predictions
+  # ==========================================================================
+  - name: demand_forecast
+    description: ML demand forecasts by product and region.
+    base_table:
+      database: CHEMICALS_DB
+      schema: CHEMICAL_OPS
+      table: DEMAND_FORECAST
+    
+    dimensions:
+      - name: product_id
+        expr: PRODUCT_ID
+        data_type: TEXT
+      - name: region
+        description: Forecast region
+        expr: REGION
+        data_type: TEXT
+      - name: customer_segment
+        description: Customer segment
+        expr: CUSTOMER_SEGMENT
+        data_type: TEXT
+      - name: forecast_horizon
+        description: Forecast horizon (WEEKLY, MONTHLY, QUARTERLY)
+        expr: FORECAST_HORIZON
+        data_type: TEXT
+      - name: top_driver_1
+        synonyms: ["main driver"]
+        description: Top demand driver
+        expr: TOP_DRIVER_1
+        data_type: TEXT
+
+    time_dimensions:
+      - name: forecast_date
+        description: Date forecast was generated
+        expr: FORECAST_DATE
+        data_type: DATE
+      - name: forecast_period_start
+        description: Forecast period start
+        expr: FORECAST_PERIOD_START
+        data_type: DATE
+
+    facts:
+      - name: predicted_volume_mt
+        synonyms: ["forecast volume", "predicted demand"]
+        description: Predicted volume in metric tons
+        expr: PREDICTED_VOLUME_MT
+        data_type: NUMBER
+      - name: prediction_confidence
+        synonyms: ["confidence"]
+        description: Prediction confidence score
+        expr: PREDICTION_CONFIDENCE
+        data_type: NUMBER
+      - name: forecast_vs_history_pct
+        description: Forecast vs historical average percentage change
+        expr: FORECAST_VS_HISTORY_PCT
+        data_type: NUMBER
+
+  # ==========================================================================
+  # OPTIMAL_PRICING - Price recommendations
+  # ==========================================================================
+  - name: optimal_pricing
+    description: Optimal price recommendations from ML optimization.
+    base_table:
+      database: CHEMICALS_DB
+      schema: CHEMICAL_OPS
+      table: OPTIMAL_PRICING
+    
+    dimensions:
+      - name: product_id
+        expr: PRODUCT_ID
+        data_type: TEXT
+      - name: region
+        description: Region
+        expr: REGION
+        data_type: TEXT
+      - name: customer_segment
+        description: Customer segment
+        expr: CUSTOMER_SEGMENT
+        data_type: TEXT
+      - name: feedstock_trend
+        description: Feedstock price trend
+        expr: FEEDSTOCK_TREND
+        data_type: TEXT
+        sample_values: ["RISING", "STABLE", "FALLING"]
+      - name: competitive_position
+        description: Competitive price position
+        expr: COMPETITIVE_POSITION
+        data_type: TEXT
+        sample_values: ["ABOVE", "AT", "BELOW"]
+
+    time_dimensions:
+      - name: recommendation_date
+        description: Recommendation date
+        expr: RECOMMENDATION_DATE
+        data_type: DATE
+
+    facts:
+      - name: current_cost_per_mt
+        synonyms: ["current cost"]
+        description: Current cost per MT
+        expr: CURRENT_COST_PER_MT
+        data_type: NUMBER
+      - name: floor_price_per_mt
+        synonyms: ["floor price", "minimum price"]
+        description: Floor price per MT
+        expr: FLOOR_PRICE_PER_MT
+        data_type: NUMBER
+      - name: optimal_price_per_mt
+        synonyms: ["optimal price", "recommended price"]
+        description: Optimal price per MT
+        expr: OPTIMAL_PRICE_PER_MT
+        data_type: NUMBER
+      - name: predicted_margin_at_optimal
+        description: Predicted margin at optimal price
+        expr: PREDICTED_MARGIN_AT_OPTIMAL
+        data_type: NUMBER
+      - name: price_elasticity
+        synonyms: ["elasticity"]
+        description: Price elasticity of demand
+        expr: PRICE_ELASTICITY
+        data_type: NUMBER
+
+# ==========================================================================
+# Verified Queries - Golden queries from DRD
+# ==========================================================================
+verified_queries:
+  - name: margin_by_region_quarter
+    question: "Show me the average margin for Ethylene products in Europe vs North America for Q3"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT REGION, AVG(GROSS_MARGIN_PCT) as AVG_MARGIN_PCT, SUM(GROSS_MARGIN) as TOTAL_MARGIN
+      FROM __margin_analyzer
+      WHERE PRODUCT_FAMILY = 'Olefins' 
+        AND REGION IN ('Europe', 'North America')
+        AND QUARTER(ORDER_DATE) = 3
+      GROUP BY REGION
+      ORDER BY AVG_MARGIN_PCT DESC
+
+  - name: underpriced_deals
+    question: "How many deals were underpriced this month?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT MARGIN_STATUS, COUNT(*) as DEAL_COUNT, SUM(GROSS_MARGIN) as TOTAL_MARGIN_IMPACT
+      FROM __margin_analyzer
+      WHERE ORDER_DATE >= DATE_TRUNC('month', CURRENT_DATE())
+      GROUP BY MARGIN_STATUS
+      ORDER BY CASE MARGIN_STATUS WHEN 'LOSS' THEN 1 WHEN 'UNDERPRICED' THEN 2 WHEN 'BELOW_TARGET' THEN 3 ELSE 4 END
+
+  - name: feedstock_trend
+    question: "What is the trend in Propylene prices this week?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT INDEX_NAME, CURRENT_PRICE, PRICE_CHANGE_PCT_7D, PRICE_TREND
+      FROM __market_trends
+      WHERE INDEX_NAME LIKE '%Propylene%'
+      ORDER BY INDEX_DATE DESC
+      LIMIT 5
+
+  - name: inventory_at_risk
+    question: "Which products have critical inventory levels?"
+    use_as_onboarding_question: true
+    sql: |
+      SELECT PRODUCT_NAME, SITE_NAME, QUANTITY_AVAILABLE_MT, DAYS_OF_SUPPLY, INVENTORY_STATUS
+      FROM __inventory_health
+      WHERE INVENTORY_STATUS IN ('CRITICAL', 'LOW')
+      ORDER BY DAYS_OF_SUPPLY ASC
+
+  - name: margin_by_customer_segment
+    question: "What is the margin by customer segment?"
+    sql: |
+      SELECT CUSTOMER_SEGMENT, AVG(GROSS_MARGIN_PCT) as AVG_MARGIN_PCT, 
+             SUM(SALES_VOLUME_MT) as TOTAL_VOLUME, SUM(GROSS_MARGIN) as TOTAL_MARGIN
+      FROM __margin_analyzer
+      GROUP BY CUSTOMER_SEGMENT
+      ORDER BY TOTAL_MARGIN DESC
+
+  - name: top_products_by_margin
+    question: "What are the top products by margin?"
+    sql: |
+      SELECT PRODUCT_NAME, PRODUCT_FAMILY, SUM(GROSS_MARGIN) as TOTAL_MARGIN,
+             AVG(GROSS_MARGIN_PCT) as AVG_MARGIN_PCT, SUM(SALES_VOLUME_MT) as TOTAL_VOLUME
+      FROM __margin_analyzer
+      GROUP BY PRODUCT_NAME, PRODUCT_FAMILY
+      ORDER BY TOTAL_MARGIN DESC
+      LIMIT 10
+
+  - name: pricing_recommendation
+    question: "What should we charge for Polypropylene in North America?"
+    sql: |
+      SELECT PRODUCT_ID, REGION, CURRENT_COST_PER_MT, FLOOR_PRICE_PER_MT, 
+             OPTIMAL_PRICE_PER_MT, FEEDSTOCK_TREND, PRICE_ELASTICITY
+      FROM __optimal_pricing
+      WHERE PRODUCT_ID LIKE 'PP%' AND REGION = 'North America'
+      ORDER BY RECOMMENDATION_DATE DESC
+      LIMIT 1
+
+custom_instructions: >
+  This semantic model covers Chemicals Pricing & Supply Chain operations.
+  Key entities: Products (chemicals by CAS number), Customers (by segment/tier), Sales Orders, Production Runs.
+  Measures: Gross_Margin, Sales_Volume_MT, Avg_Selling_Price, Feedstock_Cost.
+  Dimensions: Product_Family (Olefins, Polymers, Aromatics, Intermediates), Region, Customer_Segment, Sales_Channel.
+  Margin status: LOSS (negative margin), UNDERPRICED (<50% of target), BELOW_TARGET, ON_TARGET.
+  Price trends: SPIKE (>10%), RISING (>5%), STABLE, FALLING (<-5%), CRASH (<-10%).
+  Use MARGIN_ANALYZER for profitability analysis. Use MARKET_TRENDS for feedstock prices.
+  Use INVENTORY_HEALTH for stock analysis. Use OPTIMAL_PRICING for price recommendations.

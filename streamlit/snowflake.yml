@@ -1,0 +1,10 @@
+# Snowflake CLI configuration for Streamlit deployment
+
+definition_version: 1
+streamlit:
+  name: CHEMICALS_PRICING_APP
+  query_warehouse: COMPUTE_WH
+  main_file: streamlit_app.py
+  pages_dir: pages
+  env_file: environment.yml
+  title: "Chemicals Pricing & Supply Chain"

@@ -1,0 +1,7 @@
+site_id,site_name,site_type,region,country,city,latitude,longitude,capacity_mt_year,utilization_target_pct,storage_capacity_mt,is_active
+SITE-USG-01,Houston Complex,MANUFACTURING,North America,USA,Houston,26.1491,101.8272,500000,85,50000,True
+SITE-USG-02,Texas City Plant,MANUFACTURING,North America,USA,Texas,39.1736,82.8443,350000,85,35000,True
+SITE-NWE-01,Rotterdam Terminal,MANUFACTURING,Europe,Netherlands,Rotterdam,47.7652,3.2042,400000,85,40000,True
+SITE-NWE-02,Antwerp Complex,MANUFACTURING,Europe,Netherlands,Antwerp,43.4604,99.2886,450000,85,45000,True
+SITE-NEA-01,Singapore Hub,MANUFACTURING,Asia Pacific,Singapore,Singapore,25.5701,-52.556,600000,85,60000,True
+SITE-NEA-02,Shanghai Plant,MANUFACTURING,Asia Pacific,Singapore,Shanghai,29.4856,106.8497,500000,85,50000,True

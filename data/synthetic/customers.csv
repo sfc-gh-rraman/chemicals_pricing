@@ -1,0 +1,201 @@
+customer_id,customer_name,customer_segment,customer_tier,credit_limit,payment_terms_days,primary_region,primary_contact,annual_volume_mt,customer_since,is_active
+CUST-00001,Advanced Corp,Construction,Gold,2000000,30,Latin America,contact0@example.com,1173.2,2019-01-05,True
+CUST-00002,Premier Partners,Agricultural,Silver,500000,30,Europe,contact1@example.com,3010.1,2019-04-04,True
+CUST-00003,Global Corp,Consumer,Platinum,5000000,45,Europe,contact2@example.com,6583.7,2018-06-17,True
+CUST-00004,Global Holdings,Industrial,Gold,2000000,30,North America,contact3@example.com,2282.4,2024-04-06,True
+CUST-00005,Atlantic Partners,Automotive,Gold,2000000,30,Asia Pacific,contact4@example.com,424.1,2022-05-02,True
+CUST-00006,Advanced Holdings,Consumer,Platinum,5000000,45,Latin America,contact5@example.com,848.0,2020-04-23,True
+CUST-00007,Premier Manufacturing,Industrial,Platinum,5000000,45,North America,contact6@example.com,299.2,2022-04-09,True
+CUST-00008,Atlantic LLC,Automotive,Gold,2000000,30,Middle East,contact7@example.com,5028.1,2019-11-15,True
+CUST-00009,Pacific Industries,Automotive,Standard,100000,15,North America,contact8@example.com,459.5,2017-09-29,True
+CUST-00010,United Chemicals,Industrial,Standard,100000,15,North America,contact9@example.com,615.6,2020-07-02,True
+CUST-00011,Atlantic Group,Automotive,Standard,100000,15,Europe,contact10@example.com,10.4,2025-01-13,True
+CUST-00012,Industrial Chemicals,Automotive,Gold,2000000,30,Asia Pacific,contact11@example.com,8758.9,2022-12-06,True
+CUST-00013,Global Holdings,Construction,Standard,100000,15,North America,contact12@example.com,893.2,2024-06-01,True
+CUST-00014,Atlantic Industries,Construction,Standard,100000,15,Latin America,contact13@example.com,119.3,2019-05-13,True
+CUST-00015,United Group,Industrial,Silver,500000,30,Europe,contact14@example.com,200.7,2023-09-18,True
+CUST-00016,Global Manufacturing,Consumer,Silver,500000,30,Middle East,contact15@example.com,202.6,2020-05-10,True
+CUST-00017,National Corp,Construction,Silver,500000,30,Middle East,contact16@example.com,362.8,2017-07-19,True
+CUST-00018,National Partners,Agricultural,Silver,500000,30,Europe,contact17@example.com,743.9,2021-07-06,True
+CUST-00019,Pacific Manufacturing,Industrial,Silver,500000,30,North America,contact18@example.com,565.5,2019-01-11,True
+CUST-00020,Pacific Corp,Consumer,Standard,100000,15,Asia Pacific,contact19@example.com,172.1,2020-11-30,True
+CUST-00021,Global LLC,Construction,Standard,100000,15,Latin America,contact20@example.com,473.2,2017-08-14,True
+CUST-00022,Pacific Chemicals,Agricultural,Gold,2000000,30,Europe,contact21@example.com,375.6,2022-01-02,True
+CUST-00023,National Partners,Agricultural,Gold,2000000,30,Europe,contact22@example.com,863.8,2022-03-30,True
+CUST-00024,National Industries,Industrial,Standard,100000,15,North America,contact23@example.com,228.1,2025-01-07,True
+CUST-00025,Industrial Group,Agricultural,Gold,2000000,30,Europe,contact24@example.com,1522.3,2018-10-08,False
+CUST-00026,Premier Chemicals,Consumer,Silver,500000,30,North America,contact25@example.com,1537.9,2020-03-28,True
+CUST-00027,Global Holdings,Agricultural,Standard,100000,15,Asia Pacific,contact26@example.com,111.4,2022-09-14,True
+CUST-00028,Advanced Chemicals,Agricultural,Standard,100000,15,North America,contact27@example.com,361.0,2022-05-28,True
+CUST-00029,Premier Group,Automotive,Platinum,5000000,45,Europe,contact28@example.com,4487.5,2016-01-24,True
+CUST-00030,Pacific Group,Agricultural,Gold,2000000,30,Europe,contact29@example.com,118.9,2024-08-16,True
+CUST-00031,Industrial Holdings,Consumer,Standard,100000,15,Europe,contact30@example.com,467.7,2021-08-20,True
+CUST-00032,United Group,Consumer,Platinum,5000000,45,Europe,contact31@example.com,934.8,2021-05-18,True
+CUST-00033,Advanced Holdings,Agricultural,Silver,500000,30,North America,contact32@example.com,67.3,2024-09-30,True
+CUST-00034,National Industries,Consumer,Silver,500000,30,Asia Pacific,contact33@example.com,2973.7,2023-11-04,True
+CUST-00035,Pacific Group,Agricultural,Silver,500000,30,Asia Pacific,contact34@example.com,3370.6,2018-08-05,True
+CUST-00036,United Holdings,Automotive,Platinum,5000000,45,North America,contact35@example.com,8261.7,2020-03-22,True
+CUST-00037,Pacific LLC,Construction,Silver,500000,30,Asia Pacific,contact36@example.com,363.3,2019-05-16,True
+CUST-00038,National Chemicals,Agricultural,Silver,500000,30,Latin America,contact37@example.com,102.8,2022-11-28,True
+CUST-00039,National Group,Consumer,Standard,100000,15,Latin America,contact38@example.com,576.4,2018-11-30,True
+CUST-00040,Premier Partners,Agricultural,Gold,2000000,30,Asia Pacific,contact39@example.com,1450.2,2020-02-08,True
+CUST-00041,Atlantic Manufacturing,Construction,Silver,500000,30,Europe,contact40@example.com,130.2,2021-11-16,True
+CUST-00042,United LLC,Agricultural,Platinum,5000000,45,Middle East,contact41@example.com,3417.7,2022-07-16,True
+CUST-00043,Industrial Manufacturing,Industrial,Platinum,5000000,45,Europe,contact42@example.com,175.0,2019-12-14,True
+CUST-00044,Advanced Partners,Consumer,Standard,100000,15,Middle East,contact43@example.com,1200.2,2020-07-30,True
+CUST-00045,United Chemicals,Industrial,Standard,100000,15,North America,contact44@example.com,149.7,2017-04-03,True
+CUST-00046,Pacific Partners,Construction,Gold,2000000,30,North America,contact45@example.com,2715.6,2023-07-25,True
+CUST-00047,Industrial Group,Construction,Silver,500000,30,Middle East,contact46@example.com,373.5,2018-11-30,True
+CUST-00048,United LLC,Automotive,Silver,500000,30,Europe,contact47@example.com,734.1,2016-06-21,True
+CUST-00049,Pacific LLC,Consumer,Gold,2000000,30,Latin America,contact48@example.com,1978.1,2022-06-06,True
+CUST-00050,Atlantic Corp,Construction,Platinum,5000000,45,Asia Pacific,contact49@example.com,1021.9,2020-10-06,True
+CUST-00051,Premier Partners,Industrial,Silver,500000,30,Europe,contact50@example.com,3492.8,2020-05-24,True
+CUST-00052,Global Group,Automotive,Standard,100000,15,Latin America,contact51@example.com,746.1,2019-09-17,False
+CUST-00053,Advanced Corp,Agricultural,Standard,100000,15,Asia Pacific,contact52@example.com,1402.5,2019-08-02,True
+CUST-00054,Premier Group,Automotive,Platinum,5000000,45,Latin America,contact53@example.com,11260.8,2016-12-08,True
+CUST-00055,Global Group,Consumer,Standard,100000,15,Latin America,contact54@example.com,455.5,2018-06-03,True
+CUST-00056,Atlantic Partners,Industrial,Standard,100000,15,North America,contact55@example.com,1274.7,2023-01-08,True
+CUST-00057,Premier Holdings,Agricultural,Gold,2000000,30,Latin America,contact56@example.com,231.6,2016-07-10,True
+CUST-00058,Pacific Partners,Automotive,Gold,2000000,30,Asia Pacific,contact57@example.com,545.3,2024-11-03,True
+CUST-00059,Pacific Industries,Agricultural,Gold,2000000,30,North America,contact58@example.com,115.7,2016-08-07,False
+CUST-00060,Atlantic Corp,Consumer,Standard,100000,15,Europe,contact59@example.com,196.8,2023-08-23,True
+CUST-00061,Industrial LLC,Construction,Standard,100000,15,North America,contact60@example.com,246.1,2016-06-16,True
+CUST-00062,Pacific Chemicals,Construction,Standard,100000,15,Middle East,contact61@example.com,158.3,2021-07-27,True
+CUST-00063,Advanced Group,Agricultural,Silver,500000,30,North America,contact62@example.com,1764.6,2017-01-15,True
+CUST-00064,National Manufacturing,Consumer,Gold,2000000,30,Middle East,contact63@example.com,1103.1,2016-02-17,True
+CUST-00065,Premier Manufacturing,Agricultural,Silver,500000,30,North America,contact64@example.com,329.8,2019-05-21,True
+CUST-00066,Pacific Group,Automotive,Standard,100000,15,North America,contact65@example.com,391.2,2020-12-30,True
+CUST-00067,National Partners,Consumer,Silver,500000,30,Latin America,contact66@example.com,151.9,2019-11-05,True
+CUST-00068,United Manufacturing,Agricultural,Silver,500000,30,Middle East,contact67@example.com,1620.5,2021-12-06,True
+CUST-00069,Advanced Holdings,Automotive,Silver,500000,30,Europe,contact68@example.com,77.5,2024-09-26,True
+CUST-00070,Premier LLC,Consumer,Silver,500000,30,Asia Pacific,contact69@example.com,4334.1,2021-03-29,True
+CUST-00071,United Manufacturing,Agricultural,Silver,500000,30,Middle East,contact70@example.com,1479.5,2022-05-09,True
+CUST-00072,Industrial Partners,Construction,Standard,100000,15,Latin America,contact71@example.com,110.8,2020-01-13,True
+CUST-00073,United LLC,Agricultural,Gold,2000000,30,North America,contact72@example.com,13.8,2017-08-12,True
+CUST-00074,Advanced Holdings,Construction,Silver,500000,30,Latin America,contact73@example.com,1689.9,2021-02-10,True
+CUST-00075,Pacific Corp,Agricultural,Gold,2000000,30,Asia Pacific,contact74@example.com,3067.7,2021-07-09,True
+CUST-00076,Industrial LLC,Consumer,Gold,2000000,30,Middle East,contact75@example.com,3264.2,2016-12-07,True
+CUST-00077,Pacific Corp,Construction,Gold,2000000,30,Middle East,contact76@example.com,3688.0,2021-09-26,True
+CUST-00078,Atlantic LLC,Agricultural,Platinum,5000000,45,Europe,contact77@example.com,384.6,2024-07-19,True
+CUST-00079,Atlantic Partners,Agricultural,Standard,100000,15,Middle East,contact78@example.com,221.9,2023-11-28,True
+CUST-00080,Industrial Holdings,Agricultural,Silver,500000,30,Middle East,contact79@example.com,123.2,2022-12-28,True
+CUST-00081,Pacific Group,Automotive,Gold,2000000,30,Asia Pacific,contact80@example.com,4971.3,2019-07-18,True
+CUST-00082,National Manufacturing,Consumer,Gold,2000000,30,North America,contact81@example.com,2440.8,2022-04-11,True
+CUST-00083,United Group,Construction,Silver,500000,30,Latin America,contact82@example.com,401.8,2020-01-03,True
+CUST-00084,National Industries,Construction,Standard,100000,15,Asia Pacific,contact83@example.com,32.8,2018-03-22,True
+CUST-00085,National Manufacturing,Consumer,Standard,100000,15,North America,contact84@example.com,186.2,2023-04-19,True
+CUST-00086,Advanced Partners,Industrial,Gold,2000000,30,Middle East,contact85@example.com,983.3,2017-04-30,True
+CUST-00087,National Partners,Industrial,Gold,2000000,30,Asia Pacific,contact86@example.com,3269.7,2024-04-05,True
+CUST-00088,United Group,Construction,Standard,100000,15,Asia Pacific,contact87@example.com,507.4,2023-10-09,True
+CUST-00089,Pacific Industries,Agricultural,Standard,100000,15,Europe,contact88@example.com,1091.1,2023-03-14,True
+CUST-00090,Industrial Manufacturing,Construction,Standard,100000,15,Middle East,contact89@example.com,319.5,2019-10-21,True
+CUST-00091,Industrial Partners,Agricultural,Silver,500000,30,Latin America,contact90@example.com,127.4,2024-02-27,True
+CUST-00092,Global Manufacturing,Agricultural,Standard,100000,15,Latin America,contact91@example.com,624.6,2022-06-29,True
+CUST-00093,National Industries,Construction,Standard,100000,15,Middle East,contact92@example.com,715.2,2016-07-02,True
+CUST-00094,National Chemicals,Construction,Standard,100000,15,Latin America,contact93@example.com,411.9,2018-06-30,True
+CUST-00095,Advanced Holdings,Industrial,Silver,500000,30,Latin America,contact94@example.com,1473.9,2021-06-16,True
+CUST-00096,Industrial LLC,Agricultural,Silver,500000,30,Europe,contact95@example.com,680.8,2017-08-18,True
+CUST-00097,Premier LLC,Industrial,Silver,500000,30,Middle East,contact96@example.com,739.7,2021-06-07,True
+CUST-00098,Global Partners,Construction,Standard,100000,15,Latin America,contact97@example.com,278.9,2020-06-04,True
+CUST-00099,Industrial Partners,Agricultural,Standard,100000,15,Middle East,contact98@example.com,12.9,2016-07-15,True
+CUST-00100,National Partners,Construction,Gold,2000000,30,Asia Pacific,contact99@example.com,285.4,2017-03-24,True
+CUST-00101,Atlantic LLC,Construction,Standard,100000,15,North America,contact100@example.com,16.0,2018-11-18,False
+CUST-00102,Pacific Partners,Industrial,Gold,2000000,30,Latin America,contact101@example.com,2529.3,2023-09-28,True
+CUST-00103,National LLC,Automotive,Standard,100000,15,Europe,contact102@example.com,188.7,2020-05-26,True
+CUST-00104,Atlantic Group,Consumer,Silver,500000,30,Latin America,contact103@example.com,710.4,2022-12-03,True
+CUST-00105,National Group,Consumer,Standard,100000,15,Middle East,contact104@example.com,1190.6,2021-03-31,True
+CUST-00106,National LLC,Agricultural,Standard,100000,15,Middle East,contact105@example.com,143.4,2018-06-23,True
+CUST-00107,Industrial Holdings,Consumer,Silver,500000,30,Latin America,contact106@example.com,528.3,2021-05-01,True
+CUST-00108,Premier Corp,Automotive,Silver,500000,30,Middle East,contact107@example.com,1408.7,2017-03-28,True
+CUST-00109,Advanced Industries,Consumer,Standard,100000,15,Latin America,contact108@example.com,129.9,2021-06-28,True
+CUST-00110,Atlantic Partners,Automotive,Standard,100000,15,Latin America,contact109@example.com,40.1,2024-08-23,True
+CUST-00111,Industrial Manufacturing,Agricultural,Standard,100000,15,Middle East,contact110@example.com,171.1,2019-02-28,True
+CUST-00112,Atlantic Manufacturing,Consumer,Silver,500000,30,North America,contact111@example.com,175.8,2019-10-17,True
+CUST-00113,Advanced Manufacturing,Agricultural,Standard,100000,15,Asia Pacific,contact112@example.com,1327.5,2021-05-17,True
+CUST-00114,Industrial Industries,Automotive,Standard,100000,15,Middle East,contact113@example.com,825.4,2018-02-18,True
+CUST-00115,Advanced Manufacturing,Consumer,Standard,100000,15,Asia Pacific,contact114@example.com,501.7,2016-07-13,True
+CUST-00116,National Industries,Automotive,Gold,2000000,30,North America,contact115@example.com,5128.8,2024-07-17,True
+CUST-00117,Advanced Chemicals,Agricultural,Silver,500000,30,North America,contact116@example.com,1628.0,2022-04-27,True
+CUST-00118,Pacific Group,Consumer,Gold,2000000,30,Middle East,contact117@example.com,516.2,2018-02-09,True
+CUST-00119,Industrial LLC,Construction,Gold,2000000,30,Latin America,contact118@example.com,5577.0,2019-11-27,True
+CUST-00120,Atlantic Manufacturing,Automotive,Standard,100000,15,North America,contact119@example.com,387.5,2020-02-08,True
+CUST-00121,Advanced LLC,Agricultural,Standard,100000,15,Middle East,contact120@example.com,823.7,2019-12-08,True
+CUST-00122,Pacific Corp,Automotive,Standard,100000,15,Europe,contact121@example.com,1132.1,2020-10-12,True
+CUST-00123,National Industries,Agricultural,Standard,100000,15,Middle East,contact122@example.com,191.4,2017-09-04,True
+CUST-00124,Global Partners,Construction,Standard,100000,15,North America,contact123@example.com,58.3,2021-11-06,True
+CUST-00125,United Corp,Construction,Standard,100000,15,Europe,contact124@example.com,129.3,2018-02-04,True
+CUST-00126,Global LLC,Industrial,Standard,100000,15,Europe,contact125@example.com,278.5,2016-03-19,True
+CUST-00127,Pacific LLC,Agricultural,Standard,100000,15,Middle East,contact126@example.com,851.9,2021-05-24,True
+CUST-00128,Premier LLC,Consumer,Gold,2000000,30,Europe,contact127@example.com,4928.4,2023-03-20,True
+CUST-00129,Premier Manufacturing,Agricultural,Standard,100000,15,Latin America,contact128@example.com,3.5,2019-10-22,True
+CUST-00130,Advanced Holdings,Consumer,Standard,100000,15,Europe,contact129@example.com,357.4,2024-01-18,True
+CUST-00131,Industrial Holdings,Agricultural,Silver,500000,30,North America,contact130@example.com,540.3,2017-07-07,True
+CUST-00132,Premier Manufacturing,Construction,Silver,500000,30,Asia Pacific,contact131@example.com,251.2,2017-06-28,True
+CUST-00133,Premier Corp,Construction,Standard,100000,15,North America,contact132@example.com,63.8,2017-10-18,True
+CUST-00134,Pacific Chemicals,Agricultural,Standard,100000,15,Latin America,contact133@example.com,206.0,2024-07-20,True
+CUST-00135,United Chemicals,Automotive,Gold,2000000,30,Asia Pacific,contact134@example.com,7157.8,2020-09-13,True
+CUST-00136,Atlantic Group,Automotive,Silver,500000,30,Middle East,contact135@example.com,390.4,2017-09-18,True
+CUST-00137,National Industries,Construction,Silver,500000,30,Latin America,contact136@example.com,731.5,2017-04-26,True
+CUST-00138,Premier Manufacturing,Automotive,Standard,100000,15,Latin America,contact137@example.com,607.0,2017-05-15,True
+CUST-00139,United Manufacturing,Industrial,Silver,500000,30,Asia Pacific,contact138@example.com,452.0,2019-12-17,True
+CUST-00140,Global Holdings,Construction,Standard,100000,15,Europe,contact139@example.com,1783.9,2022-04-30,True
+CUST-00141,United Corp,Consumer,Platinum,5000000,45,Middle East,contact140@example.com,16410.0,2022-06-12,True
+CUST-00142,Atlantic Chemicals,Construction,Platinum,5000000,45,Europe,contact141@example.com,1450.3,2019-01-01,True
+CUST-00143,Global Chemicals,Industrial,Standard,100000,15,Europe,contact142@example.com,343.8,2024-11-22,True
+CUST-00144,Atlantic LLC,Construction,Silver,500000,30,Europe,contact143@example.com,357.9,2024-06-21,True
+CUST-00145,Pacific Partners,Construction,Gold,2000000,30,Latin America,contact144@example.com,838.1,2020-01-12,True
+CUST-00146,United Industries,Construction,Gold,2000000,30,Middle East,contact145@example.com,94.0,2016-11-26,True
+CUST-00147,Global Industries,Agricultural,Silver,500000,30,Middle East,contact146@example.com,940.5,2019-09-09,True
+CUST-00148,Industrial Manufacturing,Industrial,Silver,500000,30,Latin America,contact147@example.com,698.5,2024-02-26,True
+CUST-00149,Premier Group,Industrial,Gold,2000000,30,Europe,contact148@example.com,132.1,2018-05-12,True
+CUST-00150,Pacific Manufacturing,Construction,Standard,100000,15,Latin America,contact149@example.com,163.3,2017-09-19,True
+CUST-00151,United Group,Consumer,Silver,500000,30,Middle East,contact150@example.com,2388.9,2021-04-04,True
+CUST-00152,Premier Group,Automotive,Standard,100000,15,Latin America,contact151@example.com,136.9,2021-07-21,True
+CUST-00153,Industrial Manufacturing,Consumer,Standard,100000,15,Asia Pacific,contact152@example.com,78.3,2024-01-14,True
+CUST-00154,Premier Chemicals,Automotive,Platinum,5000000,45,North America,contact153@example.com,3361.4,2018-10-27,True
+CUST-00155,Pacific Group,Construction,Silver,500000,30,Middle East,contact154@example.com,4244.0,2021-02-03,True
+CUST-00156,National Holdings,Industrial,Standard,100000,15,Latin America,contact155@example.com,138.6,2023-11-24,True
+CUST-00157,United Manufacturing,Consumer,Standard,100000,15,Europe,contact156@example.com,557.6,2021-02-17,True
+CUST-00158,United Group,Industrial,Standard,100000,15,Asia Pacific,contact157@example.com,716.9,2018-10-08,True
+CUST-00159,Global LLC,Construction,Standard,100000,15,Middle East,contact158@example.com,135.7,2024-09-25,True
+CUST-00160,Atlantic Chemicals,Agricultural,Silver,500000,30,Asia Pacific,contact159@example.com,1302.7,2018-09-16,True
+CUST-00161,Global Manufacturing,Consumer,Standard,100000,15,North America,contact160@example.com,229.3,2016-09-09,True
+CUST-00162,Atlantic Holdings,Automotive,Silver,500000,30,Latin America,contact161@example.com,1000.5,2021-07-25,True
+CUST-00163,Global Chemicals,Construction,Platinum,5000000,45,Middle East,contact162@example.com,5019.2,2023-04-18,True
+CUST-00164,Advanced Partners,Industrial,Gold,2000000,30,North America,contact163@example.com,1918.5,2018-04-02,True
+CUST-00165,Pacific Holdings,Consumer,Standard,100000,15,Asia Pacific,contact164@example.com,47.3,2020-03-28,True
+CUST-00166,National Industries,Automotive,Silver,500000,30,Middle East,contact165@example.com,1803.6,2022-08-02,True
+CUST-00167,National Corp,Industrial,Platinum,5000000,45,Middle East,contact166@example.com,1934.1,2016-06-14,True
+CUST-00168,Global Partners,Agricultural,Silver,500000,30,Asia Pacific,contact167@example.com,206.4,2016-09-06,True
+CUST-00169,United Holdings,Automotive,Silver,500000,30,Europe,contact168@example.com,41.6,2024-04-01,True
+CUST-00170,Pacific Holdings,Automotive,Platinum,5000000,45,North America,contact169@example.com,4468.9,2018-08-08,True
+CUST-00171,Advanced Industries,Automotive,Gold,2000000,30,Latin America,contact170@example.com,2829.6,2021-06-01,True
+CUST-00172,Premier Manufacturing,Automotive,Standard,100000,15,Middle East,contact171@example.com,8.4,2020-02-29,True
+CUST-00173,Pacific Group,Automotive,Silver,500000,30,Europe,contact172@example.com,717.6,2021-07-31,True
+CUST-00174,Pacific Manufacturing,Agricultural,Standard,100000,15,Europe,contact173@example.com,128.4,2019-02-09,True
+CUST-00175,Atlantic Corp,Agricultural,Standard,100000,15,Asia Pacific,contact174@example.com,518.1,2023-11-27,True
+CUST-00176,Pacific Chemicals,Consumer,Standard,100000,15,Europe,contact175@example.com,95.8,2016-05-23,True
+CUST-00177,Industrial Holdings,Construction,Standard,100000,15,Latin America,contact176@example.com,587.1,2018-01-09,True
+CUST-00178,National LLC,Industrial,Silver,500000,30,Latin America,contact177@example.com,489.0,2018-06-05,True
+CUST-00179,Industrial Industries,Industrial,Silver,500000,30,Middle East,contact178@example.com,2760.3,2024-06-02,True
+CUST-00180,Pacific Group,Industrial,Standard,100000,15,Asia Pacific,contact179@example.com,74.0,2019-11-14,True
+CUST-00181,United Holdings,Automotive,Standard,100000,15,North America,contact180@example.com,208.6,2018-04-10,True
+CUST-00182,Premier Manufacturing,Industrial,Silver,500000,30,Europe,contact181@example.com,120.4,2019-05-27,True
+CUST-00183,Industrial Chemicals,Consumer,Standard,100000,15,North America,contact182@example.com,1293.1,2020-12-23,True
+CUST-00184,Premier Industries,Automotive,Silver,500000,30,Asia Pacific,contact183@example.com,2098.3,2016-03-17,True
+CUST-00185,Advanced LLC,Industrial,Silver,500000,30,Asia Pacific,contact184@example.com,298.3,2022-03-26,True
+CUST-00186,Atlantic Holdings,Consumer,Silver,500000,30,Middle East,contact185@example.com,1078.8,2021-07-31,True
+CUST-00187,Pacific LLC,Consumer,Silver,500000,30,Latin America,contact186@example.com,1699.5,2018-10-16,True
+CUST-00188,Pacific Group,Consumer,Standard,100000,15,Asia Pacific,contact187@example.com,405.1,2019-05-11,True
+CUST-00189,United Holdings,Agricultural,Gold,2000000,30,Asia Pacific,contact188@example.com,1885.7,2016-06-19,True
+CUST-00190,National Manufacturing,Consumer,Gold,2000000,30,Europe,contact189@example.com,692.2,2019-05-14,True
+CUST-00191,Atlantic Group,Industrial,Standard,100000,15,Middle East,contact190@example.com,48.9,2023-05-01,True
+CUST-00192,Global Group,Consumer,Standard,100000,15,Middle East,contact191@example.com,1137.6,2020-12-21,True
+CUST-00193,Industrial Corp,Automotive,Standard,100000,15,Europe,contact192@example.com,1153.4,2019-01-26,True
+CUST-00194,Industrial Partners,Consumer,Silver,500000,30,Latin America,contact193@example.com,1002.7,2016-06-06,True
+CUST-00195,Atlantic Corp,Construction,Silver,500000,30,Latin America,contact194@example.com,414.0,2016-01-28,True
+CUST-00196,Premier Manufacturing,Industrial,Standard,100000,15,Asia Pacific,contact195@example.com,214.8,2017-01-30,True
+CUST-00197,Atlantic LLC,Agricultural,Platinum,5000000,45,North America,contact196@example.com,6472.3,2020-01-08,True
+CUST-00198,United Partners,Automotive,Platinum,5000000,45,Europe,contact197@example.com,11370.5,2021-02-20,True
+CUST-00199,Premier Corp,Industrial,Silver,500000,30,Latin America,contact198@example.com,2181.1,2020-09-23,True
+CUST-00200,Pacific Holdings,Consumer,Platinum,5000000,45,Asia Pacific,contact199@example.com,7567.8,2016-03-08,True

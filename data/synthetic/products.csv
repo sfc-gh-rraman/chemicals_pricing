@@ -1,0 +1,20 @@
+product_id,product_name,cas_number,product_family,product_category,product_grade,molecular_weight,density_kg_m3,hazard_class,un_number,base_unit,standard_cost_per_mt,target_margin_pct,min_order_quantity_mt,lead_time_days,is_active
+ETH-001,Ethylene,74-85-1,Olefins,Ethylene,Grade A,32.3,910.0,4.1,UN1571,MT,950,12,1,12,True
+PP-001,Propylene Polymer Grade,115-07-1,Olefins,Propylene,Food Grade,33.47,837.5,4.1,UN3069,MT,1100,12,5,14,True
+PP-002,Propylene Chemical Grade,115-07-1,Olefins,Propylene,Food Grade,65.92,1035.7,3,UN1653,MT,1050,20,10,7,True
+BUT-001,Butadiene,106-99-0,Olefins,Butadiene,Grade B,65.03,1105.4,3,UN1379,MT,1200,20,1,8,True
+HDPE-001,HDPE Film Grade,9002-88-4,Polymers,Polyethylene,Industrial,131.84,1122.9,8,UN3196,MT,1300,12,20,4,True
+LDPE-001,LDPE Injection Grade,9002-88-4,Polymers,Polyethylene,Industrial,170.66,1047.4,6.1,UN3364,MT,1350,15,1,3,True
+LLDPE-001,LLDPE C4,9002-88-4,Polymers,Polyethylene,Grade B,160.97,1194.1,4.1,UN1413,MT,1280,20,10,10,True
+PP-HOMO,Polypropylene Homopolymer,9003-07-0,Polymers,Polypropylene,Industrial,55.98,942.1,6.1,UN1292,MT,1400,15,5,5,True
+PP-COPOLY,Polypropylene Copolymer,9003-07-0,Polymers,Polypropylene,Food Grade,93.27,1195.8,9,UN1899,MT,1450,18,1,6,True
+PS-001,Polystyrene GPPS,9003-53-6,Polymers,Polystyrene,Grade A,166.47,960.5,3,UN1864,MT,1250,18,5,13,True
+PVC-001,PVC Suspension Grade,9002-86-2,Polymers,PVC,Food Grade,96.05,1165.8,8,UN1585,MT,1100,18,5,6,True
+BEN-001,Benzene,71-43-2,Aromatics,Benzene,Industrial,156.49,971.4,9,UN2635,MT,900,18,5,5,True
+TOL-001,Toluene,108-88-3,Aromatics,Toluene,Food Grade,43.64,818.8,3,UN1626,MT,850,15,20,12,True
+XYL-001,Mixed Xylenes,1330-20-7,Aromatics,Xylenes,Grade A,94.18,1038.4,8,UN3167,MT,880,18,1,13,True
+STY-001,Styrene Monomer,100-42-5,Aromatics,Styrene,Grade A,145.25,1014.8,6.1,UN2393,MT,1150,12,10,9,True
+MEG-001,Monoethylene Glycol,107-21-1,Intermediates,Glycols,Grade B,106.04,1181.5,6.1,UN3050,MT,750,15,1,13,True
+DEG-001,Diethylene Glycol,111-46-6,Intermediates,Glycols,Industrial,172.77,1003.1,4.1,UN1626,MT,800,18,5,11,True
+ACN-001,Acrylonitrile,107-13-1,Intermediates,Acrylonitrile,Grade A,131.02,995.4,3,UN2486,MT,1400,18,5,3,True
+MMA-001,Methyl Methacrylate,80-62-6,Intermediates,MMA,Grade B,179.02,1178.8,3,UN2990,MT,1600,12,5,5,True
