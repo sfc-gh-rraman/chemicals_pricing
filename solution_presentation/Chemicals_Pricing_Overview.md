@@ -28,6 +28,8 @@ In 2023, a leading specialty chemicals manufacturer discovered a devastating pat
 | **Cross-price cannibalization** | 3-8% volume shift unaccounted |
 | **Feedstock pass-through lag** | 15-30 day delay costs 2-4% margin |
 
+![Margin Leakage Breakdown](images/margin-leakage.png)
+
 **Source:** McKinsey Chemicals Pricing Excellence Study, 2024
 
 ---
