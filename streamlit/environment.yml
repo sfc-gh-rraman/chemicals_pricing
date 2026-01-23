@@ -6,3 +6,5 @@ dependencies:
   - pandas
   - plotly
   - snowflake-snowpark-python
+  - scipy
+  - numpy
