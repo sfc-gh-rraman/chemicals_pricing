@@ -150,7 +150,7 @@ def load_current_state():
     SELECT product_family, AVG(avg_price_per_mt) as current_price,
            AVG(avg_variable_cost) as variable_cost, SUM(total_quantity_mt) as total_quantity
     FROM CHEMICALS_DB.CHEMICAL_OPS.ML_TRAINING_DATA
-    WHERE order_date >= DATEADD(day, -30, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -30, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.ML_TRAINING_DATA))
     GROUP BY product_family
     """
     return session.sql(query).to_pandas()
@@ -453,6 +453,10 @@ def main():
     current_df['PRODUCT_ID'] = current_df['PRODUCT_FAMILY'].str.replace(' ', '_').str.upper()
     current_df = current_df.set_index('PRODUCT_ID')
     available_products = [p for p in products if p in current_df.index]
+    
+    if not available_products:
+        st.warning("No matching products found between elasticity matrix and current pricing data.")
+        st.stop()
     
     P0 = np.array([current_df.loc[p, 'CURRENT_PRICE'] for p in available_products])
     Q0 = np.array([current_df.loc[p, 'TOTAL_QUANTITY'] for p in available_products])

@@ -53,7 +53,7 @@ def load_margin_summary(_session):
         SUM(CASE WHEN margin_status IN ('LOSS', 'UNDERPRICED') THEN 1 ELSE 0 END) as underpriced_deals,
         SUM(CASE WHEN margin_status IN ('LOSS', 'UNDERPRICED') THEN gross_margin ELSE 0 END) as underpriced_margin_impact
     FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER
-    WHERE order_date >= DATEADD(day, -30, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -30, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER))
     """
     return _session.sql(query).to_pandas()
 
@@ -68,7 +68,7 @@ def load_margin_by_status(_session):
         SUM(gross_margin) as total_margin,
         AVG(gross_margin_pct) as avg_margin_pct
     FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER
-    WHERE order_date >= DATEADD(day, -30, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -30, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER))
     GROUP BY margin_status
     ORDER BY 
         CASE margin_status 
@@ -91,7 +91,7 @@ def load_price_vs_cost_trend(_session):
         AVG(feedstock_cost_per_mt) as avg_feedstock_cost,
         AVG(gross_margin_pct) as avg_margin_pct
     FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER
-    WHERE order_date >= DATEADD(day, -90, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -90, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER))
       AND feedstock_cost_per_mt > 0
     GROUP BY DATE_TRUNC('week', order_date)
     ORDER BY week
@@ -111,7 +111,7 @@ def load_margin_leakage(_session):
         SUM(total_product_cost) as total_product_cost,
         SUM(gross_margin) as net_margin
     FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER
-    WHERE order_date >= DATEADD(day, -30, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -30, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER))
     """
     return _session.sql(query).to_pandas()
 
@@ -127,7 +127,7 @@ def load_margin_by_region(_session):
         AVG(gross_margin_pct) as avg_margin_pct,
         SUM(sales_volume_mt) as total_volume
     FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER
-    WHERE order_date >= DATEADD(day, -30, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -30, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER))
     GROUP BY region
     ORDER BY total_margin DESC
     """
@@ -145,7 +145,7 @@ def load_margin_by_product_family(_session):
         AVG(gross_margin_pct) as avg_margin_pct,
         SUM(sales_volume_mt) as total_volume
     FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER
-    WHERE order_date >= DATEADD(day, -30, CURRENT_DATE())
+    WHERE order_date >= DATEADD(day, -30, (SELECT MAX(order_date) FROM CHEMICALS_DB.CHEMICAL_OPS.MARGIN_ANALYZER))
     GROUP BY product_family
     ORDER BY total_margin DESC
     """
